@@ -7,6 +7,7 @@ class Bob
     if greeting.strip.empty?     
       reactions[1]
     elsif greeting == greeting.upcase && greeting.match(/[a-zA-Z]/)
+                      # Matches any single character in the range a-z or A-Z.
       reactions[3]
     elsif greeting[-1] == "?"
       reactions[2]
