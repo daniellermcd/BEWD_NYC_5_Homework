@@ -8,6 +8,7 @@ puts 'Who would you like to search for?'
 query = gets.chomp
 
 result = RestClient.get URI.escape("http://api.bandsintown.com/artists/#{query}/events.json?api_version=2.0&app_id=daniellermcd")
+# need to check if 404 code is returned when artist is not found
 parsed = JSON.parse result
 
 concerts = parsed.collect do |e|
