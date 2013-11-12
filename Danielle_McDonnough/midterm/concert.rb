@@ -9,11 +9,10 @@ class Concert
   end
 
   def show
-    puts "**** #{@title} ****"
-    puts "Date: #{@datetime}"
-    puts "City: #{@location}"
-    puts "Venue: #{@venue}"
-    puts "Ticket Status: #{@status.capitalize}"
-    puts
+    concert = [ "**** #{@title} ****", 
+                "Date: #{@datetime}", 
+                "City: #{@location}", 
+                "Venue: #{@venue}", 
+                "Ticket Status: #{@status.capitalize}" ]
   end
 end

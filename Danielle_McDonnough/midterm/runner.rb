@@ -30,7 +30,8 @@ else
     puts "Here are the upcoming concert dates for #{artist_name}:"
     puts
     all_concerts.each do |concert|
-      concert.show
+      puts concert.show
+      puts
     end
   else
     concerts_filtered = all_concerts.collect do |concert|
@@ -50,7 +51,8 @@ else
       puts "Here are the upcoming concert dates for #{artist_name} in #{concerts_filtered.first.location}:"
       puts
       concerts_filtered.each do |concert|
-        concert.show
+        puts concert.show
+        puts
       end
     end
   end
