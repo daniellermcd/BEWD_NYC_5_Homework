@@ -19,5 +19,8 @@ if concerts.empty?
   puts "There are no upcoming concert dates for \"#{query}.\""
 else
   puts "Here are the upcoming concert dates for \"#{query}\":"
-  puts concerts
+  puts
+  concerts.each do |concert|
+    concert.show
+  end
 end

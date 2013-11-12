@@ -7,7 +7,7 @@ class Concert
     @status = status
   end
 
-  def to_s
+  def show
     puts "**** #{@title} ****"
     puts "Date: #{@datetime}"
     puts "City: #{@location}"
