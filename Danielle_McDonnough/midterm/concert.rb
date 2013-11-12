@@ -9,10 +9,11 @@ class Concert
   end
 
   def show
-    [ "**** #{@title} ****", 
-      "Date: #{@datetime}", 
-      "City: #{@location}", 
-      "Venue: #{@venue}", 
-      "Ticket Status: #{@status.capitalize}" ]
+    concert = []
+    concert << "**** #{@title} ****"
+    concert << "Date: #{@datetime}"
+    concert << "City: #{@location}"
+    concert << "Venue: #{@venue}"
+    concert << "Ticket Status: #{@status.capitalize}"
   end
 end

@@ -3,8 +3,8 @@ require 'rest-client'
 require 'json'
 require 'uri'
 
-puts 'Search for upcoming concert dates for your favorite bands or artists'
-puts 'Who would you like to search for?'
+puts "Search for upcoming concert dates for your favorite bands or artists"
+puts "Who would you like to search for?"
 artist = gets.chomp
 
 artist_info = RestClient.get URI.escape("http://api.bandsintown.com/artists/#{artist}.json?api_version=2.0&app_id=daniellermcd")
