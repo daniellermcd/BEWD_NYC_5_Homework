@@ -1,18 +1,18 @@
 class Concert
-  def initialize title, formatted_datetime, formatted_location, venue_name, ticket_status
+  def initialize title:'', datetime:'', location:'', venue:'', status:''
     @title = title
-    @formatted_datetime = formatted_datetime
-    @formatted_location = formatted_location
-    @venue_name = venue_name
-    @ticket_status = ticket_status
+    @datetime = datetime
+    @location = location
+    @venue = venue
+    @status = status
   end
 
   def to_s
     puts "**** #{@title} ****"
-    puts "Date: #{@formatted_datetime}"
-    puts "City: #{@formatted_location}"
-    puts "Venue: #{@venue_name}"
-    puts "Ticket Status: #{@ticket_status.capitalize}"
+    puts "Date: #{@datetime}"
+    puts "City: #{@location}"
+    puts "Venue: #{@venue}"
+    puts "Ticket Status: #{@status.capitalize}"
     puts
   end
 end
