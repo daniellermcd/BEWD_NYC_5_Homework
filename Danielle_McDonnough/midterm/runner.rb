@@ -11,8 +11,8 @@ result = RestClient.get URI.escape("http://api.bandsintown.com/artists/#{query}/
 # need to check if 404 code is returned when artist is not found
 parsed = JSON.parse result
 
-concerts = parsed.collect do |e|
-  Concert.new e["title"], e["formatted_datetime"], e["formatted_location"], e["venue"]["name"], e["ticket_status"]
+concerts = parsed.collect do |concert|
+  Concert.new concert["title"], concert["formatted_datetime"], concert["formatted_location"], concert["venue"]["name"], concert["ticket_status"]
 end
 
 if concerts.empty?
