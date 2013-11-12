@@ -10,7 +10,10 @@ class Concert
 
   def show
     concert = []
-    concert << "**** #{@title} ****"
+    concert << ""
+    concert << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    concert << "#{@title}"
+    concert << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     concert << "Date: #{@datetime}"
     concert << "City: #{@location}"
     concert << "Venue: #{@venue}"

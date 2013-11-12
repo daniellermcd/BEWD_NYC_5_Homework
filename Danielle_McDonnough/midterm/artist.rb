@@ -5,9 +5,22 @@ class Artist
     @artist = artist
   end
 
+  def exists?
+    # checks for 404 response
+    begin
+      search = RestClient.get URI.escape("http://api.bandsintown.com/artists/#{@artist}.json?api_version=2.0&app_id=daniellermcd")
+    rescue => e
+      r = JSON.parse e.response
+      if r.key?("errors")
+        false
+      else
+        true
+      end
+    end
+  end
+
   def info
     # returns a hash with artist name and number of upcoming concerts
-    # to-do: check for 404 response
     search = RestClient.get URI.escape("http://api.bandsintown.com/artists/#{@artist}.json?api_version=2.0&app_id=daniellermcd")
     search_parsed = JSON.parse search
     artist_name = search_parsed["name"]
