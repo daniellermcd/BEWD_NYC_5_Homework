@@ -34,7 +34,7 @@ if artist.exists?
       filtered.reject! { |x| x.nil? }
 
       if filtered.empty?
-        puts "Sorry, there are no upcoming concert dates for #{artist.name} in #{city}."
+        puts "Sorry, there are no upcoming concert dates for #{artist.name} in '#{city}.'"
       else
         puts "Here are the upcoming concert dates for #{artist.name} in #{filtered.first.location}:"
         # return all concerts in filtered array
@@ -43,5 +43,5 @@ if artist.exists?
     end
   end
 else
-  puts "Error" # artist.exists?["errors"].each { |e| puts "Error: #{e}" }
+  puts "Error: artist '#{query}' does not exist"
 end
