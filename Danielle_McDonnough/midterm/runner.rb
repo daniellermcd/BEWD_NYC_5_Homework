@@ -28,7 +28,7 @@ if artist.exists?
       end
 
       # scrub nil elements from filtered array
-      filtered.reject! { |x| x.nil? }
+      filtered.compact!
 
       if filtered.empty?
         puts "Sorry, there are no upcoming concert dates for #{artist.name} in '#{city}.'"
