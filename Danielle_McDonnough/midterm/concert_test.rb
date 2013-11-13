@@ -14,6 +14,6 @@ describe Concert do
   end
 
   it "can be shown" do
-    concert.show.must_equal [ "**** The Spice Girls Reunion Tour ****", "Date: Monday, March 24, 2014 at 9:00PM", "City: Mexico City, Mexico", "Venue: El Plaza Condesa", "Ticket Status: Available" ]
+    concert.show.must_equal [ "", "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", "The Spice Girls Reunion Tour", "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", "Date: Monday, March 24, 2014 at 9:00PM", "City: Mexico City, Mexico", "Venue: El Plaza Condesa", "Ticket Status: Available" ]
   end
 end
