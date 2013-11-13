@@ -1,0 +1,6 @@
+require "rubygems"
+require "linkedin"
+
+client = LinkedIn::Client.new('v0f7yeo7gd5e', '53ajLTXAgmRd8WGl')
+rtoken = client.request_token.token
+rsecret = client.request_token.secret
