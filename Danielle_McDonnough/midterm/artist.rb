@@ -1,4 +1,7 @@
 require_relative 'concert'
+require 'rest-client'
+require 'json'
+require 'uri'
 
 class Artist
   def initialize artist

@@ -1,8 +1,5 @@
 require_relative 'concert'
 require_relative 'artist'
-require 'rest-client'
-require 'json'
-require 'uri'
 
 puts "Search for upcoming concert dates for your favorite bands or artists"
 puts "Who would you like to search for?"
@@ -36,7 +33,7 @@ if artist.exists?
       if filtered.empty?
         puts "Sorry, there are no upcoming concert dates for #{artist.name} in '#{city}.'"
       else
-        puts "Here are the upcoming concert dates for #{artist.name} in #{filtered.first.location}:"
+        puts "Here are the upcoming concert dates for #{artist.name} in '#{city}':"
         # return all concerts in filtered array
         filtered.each { |concert| puts concert.show }
       end
