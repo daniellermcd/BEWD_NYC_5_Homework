@@ -6,39 +6,34 @@ puts "Who would you like to search for?"
 query = gets.chomp
 artist = Artist.new query
 
-if artist.exists?
-  if artist.number_of_upcoming_events.zero?
+if artist.info.class == Hash
+  if artist.upcoming_events_count.zero?
     puts "Sorry, there are no upcoming concert dates for #{artist.name}."
   else
     puts "Where would you like to search for #{artist.name} concerts?"
-    puts "e.g., 'London' or 'NY', or press <enter> for all upcoming concert dates"
-    city = gets.chomp.downcase
+    puts "e.g., 'New York, NY' or 'london', or press <enter> for all upcoming concert dates"
+    location = gets.chomp
 
-    if city.empty?
+    if location.empty?
       # return all concerts
       puts "Here are the upcoming concert dates for #{artist.name}:"
-      artist.concerts.each { |concert| puts concert.show }
+      artist.all_concerts.each { |concert| puts concert.show }
     else
-      # create an array of Concert objects filtered by city
-      filtered = artist.concerts.collect do |concert|
-        # for each Concert object in all concerts, check if the location includes city and add it to the array
-        if concert.location.downcase.include? city
-          concert
-        end
-      end
-
-      # scrub nil elements from filtered array
-      filtered.compact!
-
-      if filtered.empty?
-        puts "Sorry, there are no upcoming concert dates for #{artist.name} in '#{city}.'"
+      puts "Within what distance? e.g., '50' for within 50 miles"
+      radius = gets.chomp
+      # to-do: check that radius is an integer greater than 0
+      recommended = artist.recommended( location.gsub(", ", ","), radius )
+      if recommended.empty?
+        puts "Sorry, there are no upcoming concert dates for #{artist.name} within #{radius} miles of #{location}."
+      elsif recommended.first.class == Concert
+        puts "Here are the upcoming concert dates for #{artist.name} within #{radius} miles of #{location}:"
+        recommended.each { |concert| puts concert.show }
+        # to-do: display results matching location first
       else
-        puts "Here are the upcoming concert dates for #{artist.name} in '#{city}':"
-        # return all concerts in filtered array
-        filtered.each { |concert| puts concert.show }
+        recommended.each { |error| puts "Error: #{error}" }
       end
     end
   end
 else
-  puts "Error: artist '#{query}' does not exist"
+  artist.info.each { |error| puts "Error: #{error}" }
 end

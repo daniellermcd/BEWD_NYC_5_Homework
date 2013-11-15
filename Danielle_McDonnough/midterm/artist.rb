@@ -8,45 +8,65 @@ class Artist
     @artist = artist
   end
 
-  def exists?
-    # checks for 404 response
+  def info
+    errors = {}
     begin
       search = RestClient.get URI.escape("http://api.bandsintown.com/artists/#{@artist}.json?api_version=2.0&app_id=daniellermcd")
     rescue => e
       r = JSON.parse e.response
       if r.key?("errors")
-        false
-      else
-        true
+        errors = r
       end
     end
-  end
 
-  def info
-    # returns a hash with artist name and number of upcoming concerts
-    search = RestClient.get URI.escape("http://api.bandsintown.com/artists/#{@artist}.json?api_version=2.0&app_id=daniellermcd")
-    search_parsed = JSON.parse search
-    artist_name = search_parsed["name"]
-    number_of_upcoming_events = search_parsed["upcoming_events_count"]
-
-    info = { :artist_name => artist_name, :number_of_upcoming_events => number_of_upcoming_events }
+    if errors.empty?
+      search_parsed = JSON.parse search
+      { :artist_name           => search_parsed["name"], 
+        :upcoming_events_count => search_parsed["upcoming_events_count"], 
+      }
+    else
+      errors["errors"]
+    end
   end
 
   def name
     info[:artist_name]
   end
 
-  def number_of_upcoming_events
-    info[:number_of_upcoming_events]
+  def upcoming_events_count
+    info[:upcoming_events_count]
   end
 
-  def concerts
+  def all_concerts
     # returns an array of Concert objects
     events = RestClient.get URI.escape("http://api.bandsintown.com/artists/#{@artist}/events.json?api_version=2.0&app_id=daniellermcd")
     events_parsed = JSON.parse events
 
-    all_concerts = events_parsed.collect do |concert|
+    events_parsed.collect do |concert|
       Concert.new title: concert["title"], datetime: concert["formatted_datetime"], location: concert["formatted_location"], venue: concert["venue"]["name"], status: concert["ticket_status"]
+    end
+  end
+
+  def recommended location, radius
+    # checks for errors with location and radius
+    errors = {}
+    begin
+      recommended = RestClient.get URI.escape("http://api.bandsintown.com/artists/#{@artist}/events/recommended?location=#{location}&radius=#{radius}&app_id=daniellermcd&api_version=2.0&format=json")
+    rescue => e
+      r = JSON.parse e.response
+      if r.key?("errors")
+        errors = r
+      end
+    end
+
+    if errors.empty?
+      # returns an array of Concert objects
+      recommended_parsed = JSON.parse recommended
+      recommended_parsed.collect do |concert|
+        Concert.new title: concert["title"], datetime: concert["formatted_datetime"], location: concert["formatted_location"], venue: concert["venue"]["name"], status: concert["ticket_status"]
+      end
+    else
+      errors["errors"]
     end
   end
 end
