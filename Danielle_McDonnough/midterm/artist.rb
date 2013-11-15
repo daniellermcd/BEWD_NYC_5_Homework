@@ -9,6 +9,7 @@ class Artist
   end
 
   def info
+    # checks for errors with artist name
     errors = {}
     begin
       search = RestClient.get URI.escape("http://api.bandsintown.com/artists/#{@artist}.json?api_version=2.0&app_id=daniellermcd")
@@ -20,6 +21,7 @@ class Artist
     end
 
     if errors.empty?
+      # returns a hash with artist name and number of upcoming events
       search_parsed = JSON.parse search
       { :artist_name           => search_parsed["name"], 
         :upcoming_events_count => search_parsed["upcoming_events_count"], 
