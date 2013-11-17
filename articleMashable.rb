@@ -5,10 +5,10 @@ class Article
     @blurb = blurb
   end
 
-  def mashable_call
-    result = RestClient.get "http://mashable.com/search.json?q=#{}"
-    parsed = JSON.parse result
-  end
+  # def mashable_call
+  #   result = RestClient.get "http://mashable.com/search.json?q=#{}"
+  #   parsed = JSON.parse result
+  # end
 
   def to_s
     "Title: #{@title}\nBlurb: #{@blurb}"

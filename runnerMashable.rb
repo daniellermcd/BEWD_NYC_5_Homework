@@ -12,6 +12,6 @@ parsed = JSON.parse result
 
 parsed["posts"].each do |story|
   article = Article.new story["title"], story["excerpt"]
-  puts article.to_s
+  puts article
 	# puts "Title: #{story["title"]}, Blurb: #{story["excerpt"]}"
 end
