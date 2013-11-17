@@ -1,4 +1,4 @@
-require_relative 'article'
+require_relative 'articleMashable'
 require 'json'
 require 'rest-client'
 
@@ -11,6 +11,7 @@ result = RestClient.get "http://mashable.com/search.json?q=#{query}"
 parsed = JSON.parse result
 
 parsed["posts"].each do |story|
-  
-  puts "Title: #{story["title"]}, Blurb: #{story["excerpt"]}"
+  article = Article.new story["title"], story["excerpt"]
+  puts article.to_s
+	# puts "Title: #{story["title"]}, Blurb: #{story["excerpt"]}"
 end
