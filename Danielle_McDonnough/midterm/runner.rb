@@ -1,8 +1,8 @@
 require_relative 'concert'
 require_relative 'artist'
 
-puts "Search for upcoming concert dates for your favorite bands or artists"
-puts "Who would you like to search for?"
+puts 'Search for upcoming concert dates for your favorite bands or artists'
+puts 'Who would you like to search for?'
 query = gets.chomp
 artist = Artist.new query
 

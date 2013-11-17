@@ -1,6 +1,6 @@
 class Concert
   attr_reader :location
-  def initialize title:"", datetime:"", location:"", venue:"", status:""
+  def initialize(title:'', datetime:'', location:'', venue:'', status:'')
     @title = title
     @datetime = datetime
     @location = location
@@ -10,10 +10,10 @@ class Concert
 
   def show
     concert = []
-    concert << ""
-    concert << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    concert << ''
+    concert << '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
     concert << "#{@title}"
-    concert << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    concert << '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
     concert << "Date: #{@datetime}"
     concert << "City: #{@location}"
     concert << "Venue: #{@venue}"
