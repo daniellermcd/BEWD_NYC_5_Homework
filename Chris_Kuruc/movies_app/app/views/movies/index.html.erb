@@ -1,0 +1,17 @@
+<h1>Welcome to RetFlix!</h1>
+<h2>See our collection of movies below</h2>
+
+<table>                         
+  <tr>                          
+    <th>Title</th>
+    <th>Year</th>
+    <th>Description</th>
+  </tr>
+<% @movie_data.each do |movie_data| %>
+  <tr>
+    <td><%= movie_data.title %></td>  
+    <td><%= movie_data.year_released %></td>
+    <td><%= movie_data.description %></td>  
+  </tr>
+<% end %>                        
+</table> 
