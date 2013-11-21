@@ -1,0 +1,165 @@
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-19 00:48:37 -0500
+Processing by FinalController#index as HTML
+  Rendered final/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 1515ms (Views: 1475.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/final.css?body=1" for 127.0.0.1 at 2013-11-19 00:48:39 -0500
+
+
+Started GET "/assets/index.css?body=1" for 127.0.0.1 at 2013-11-19 00:48:39 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-19 00:48:39 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-19 00:48:39 -0500
+
+
+Started GET "/assets/final.js?body=1" for 127.0.0.1 at 2013-11-19 00:48:39 -0500
+
+
+Started GET "/assets/index.js?body=1" for 127.0.0.1 at 2013-11-19 00:48:39 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-19 00:48:39 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-19 00:48:39 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-19 00:48:39 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-19 00:50:41 -0500
+Processing by FinalController#index as HTML
+  Rendered final/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/index.css?body=1" for 127.0.0.1 at 2013-11-19 00:50:41 -0500
+
+
+Started GET "/assets/final.css?body=1" for 127.0.0.1 at 2013-11-19 00:50:41 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-19 00:50:41 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-19 00:50:41 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-19 00:50:41 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-19 00:50:41 -0500
+
+
+Started GET "/assets/final.js?body=1" for 127.0.0.1 at 2013-11-19 00:50:41 -0500
+
+
+Started GET "/assets/index.js?body=1" for 127.0.0.1 at 2013-11-19 00:50:41 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-19 00:50:41 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-19 00:51:43 -0500
+Processing by FinalController#index as HTML
+  Rendered final/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/final.css?body=1" for 127.0.0.1 at 2013-11-19 00:51:43 -0500
+
+
+Started GET "/assets/final.js?body=1" for 127.0.0.1 at 2013-11-19 00:51:43 -0500
+
+
+Started GET "/assets/index.css?body=1" for 127.0.0.1 at 2013-11-19 00:51:43 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-19 00:51:43 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-19 00:51:43 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-19 00:51:43 -0500
+
+
+Started GET "/assets/index.js?body=1" for 127.0.0.1 at 2013-11-19 00:51:43 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-19 00:51:43 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-19 00:51:43 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-19 00:52:06 -0500
+Processing by FinalController#index as HTML
+  Rendered final/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/final.css?body=1" for 127.0.0.1 at 2013-11-19 00:52:06 -0500
+
+
+Started GET "/assets/final.js?body=1" for 127.0.0.1 at 2013-11-19 00:52:06 -0500
+
+
+Started GET "/assets/index.css?body=1" for 127.0.0.1 at 2013-11-19 00:52:06 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-19 00:52:06 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-19 00:52:06 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-19 00:52:06 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-19 00:52:06 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-19 00:52:06 -0500
+
+
+Started GET "/assets/index.js?body=1" for 127.0.0.1 at 2013-11-19 00:52:06 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-19 00:53:10 -0500
+Processing by FinalController#index as HTML
+  Rendered final/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/final.css?body=1" for 127.0.0.1 at 2013-11-19 00:53:10 -0500
+
+
+Started GET "/assets/index.css?body=1" for 127.0.0.1 at 2013-11-19 00:53:10 -0500
+
+
+Started GET "/assets/final.js?body=1" for 127.0.0.1 at 2013-11-19 00:53:10 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-19 00:53:10 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-19 00:53:10 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-19 00:53:10 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-19 00:53:10 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-19 00:53:10 -0500
+
+
+Started GET "/assets/index.js?body=1" for 127.0.0.1 at 2013-11-19 00:53:10 -0500
