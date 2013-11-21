@@ -1,16 +1,14 @@
 #This program uses the Google maps api to return the distance between two zipcodes.
 
-require "RestClient"
-require "JSON"
 require_relative "zipcode.rb"
+require_relative "google_distance.rb"
 
 puts "Find the distance between two zip codes..."
 
 input_valid = false
 while !input_valid do
   puts "Enter the origin and destination zipcodes. (eg. \"10001 10011\") \n>"
-  # input = gets.chomp
-  input = "10011 99999"
+  input = gets.chomp
   origin, destination = input.split(' ').collect { |zip| Zipcode.new(zip) }
 
   if !origin || !origin.valid?
@@ -22,18 +20,12 @@ while !input_valid do
   end
 end
 
-result = RestClient.get("http://maps.googleapis.com/maps/api/distancematrix/json?origins=#{origin}&destinations=#{destination}&sensor=false")
-parsed = JSON.parse(result)
+maps_result = GoogleDistance.find_by_zip origin, destination
 
-origin_address = parsed["origin_addresses"].first
-destination_address = parsed["destination_addresses"].first
-
-if origin_address.empty?
-  puts "Google couldn't find the origin zipcode."
-elsif destination_address.empty?
-  puts "Google couldn't find the destination zipcode."
+if maps_result.origin_address.empty?
+  puts "Google couldn't find the origin zipcode(#{origin})."
+elsif maps_result.destination_address.empty?
+  puts "Google couldn't find the destination zipcode (#{destination})."
 else
-  distance = parsed["rows"].first["elements"].first["distance"]["text"]
-
-  puts "The distance from #{origin_address} to #{destination_address} is #{distance}."
+  puts "The distance from #{maps_result.origin_address} to #{maps_result.destination_address} is #{maps_result.distance}."
 end
