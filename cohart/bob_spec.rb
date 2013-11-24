@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'bob2'
+require_relative 'bob3'
 
 describe Bob do
 
