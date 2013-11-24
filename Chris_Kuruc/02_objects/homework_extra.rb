@@ -1,23 +1,19 @@
 class Story
+  attr_accessor :title, :category, :upvotes
+
   def initialize title, category
     @title = title
     @category = category
-    @upvote = 1
+    @upvotes = 1
   end
   
-  attr_accessor :title, :category
-
-  ## Returns current upvotes count ##
-  def upvotes
-    @upvote
-  end
   ## Add 1 to upvote count ##
   def upvote
-    @upvote = @upvote + 1
+    @upvotes += 1
   end
   ## Minus 1 from upvote count ##
   def downvote
-    @upvote = @upvote - 1
+    @upvotes -= 1
   end
 
 end
