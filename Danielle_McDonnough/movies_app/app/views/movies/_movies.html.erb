@@ -3,6 +3,7 @@
     <th>Title</th>
     <th>Description</th>
     <th>Year Released</th>
+    <th>Rating</th>
     <th></th>
   </tr>
 
@@ -14,6 +15,13 @@
         <td><%= movie.title %></td>
         <td><%= movie.description %></td>
         <td><%= movie.year_released %></td>
+        <td>
+          <% if movie.rating.nil? %>
+            <%= "-" %>
+          <% else %>
+            <%= movie.rating %>
+          <% end %>
+        </td>
         <td><%= link_to "Show", movie_path(movie) %></td>
       </tr>
     <% end %>

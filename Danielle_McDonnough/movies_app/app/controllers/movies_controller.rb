@@ -12,8 +12,12 @@ class MoviesController < ApplicationController
   end
 
   def create
-    safe_movie = params.require(:movie).permit(:title, :description, :year_released)
-    movie = Movie.create safe_movie
-    redirect_to movie
+    safe_movie = params.require(:movie).permit(:title, :description, :year_released, :rating)
+    @movie = Movie.create safe_movie
+    if @movie.save
+      redirect_to @movie, notice: "Your movie was successfully created"
+    else
+      render new_movie_path
+    end
   end
 end

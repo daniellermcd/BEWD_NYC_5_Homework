@@ -1,5 +1,29 @@
 <%= render 'header' %>
+
+<% flash.each do |key, value| %>
+  <div id = "success">
+    <h3><%= value %></h3>
+  </div>
+<% end %>
+
 <p><strong>Title: </strong><%= @movie.title %></p>
+
 <p><strong>Description: </strong><%= @movie.description %></p>
-<p><strong>Year released: </strong><%= @movie.year_released %></p>
+
+<p><strong>Year Released: </strong>
+  <% if @movie.year_released.nil? %>
+    <%= "no year" %>
+  <% else %>
+    <%= @movie.year_released %>
+  <% end %>
+</p>
+
+<p><strong>Rating: </strong>
+  <% if @movie.rating.nil? %>
+    <%= "no rating" %>
+  <% else %>
+    <%= @movie.rating %>
+  <% end %>
+</p>
+
 <p><%= link_to "Home", "/" %></p>

@@ -29,7 +29,7 @@ a:hover {
 }
 
 table {
-  width: 75%;
+  width: 100%;
   border-collapse: collapse;
 }
 
@@ -57,4 +57,33 @@ table tr th, table tr td {
 .movie_form {
   width: 300px;
   margin: 25px 0 15px 0;
+}
+
+.field_with_errors {
+  color: red;
+  display: table;
+}
+
+#error {
+  background-color: #ffffcc;
+  display: table;
+  padding: 0 10px;
+}
+
+#success {
+  background-color: #ccffcc;
+  display: table;
+  padding: 0 10px;
+}
+
+input[type="text"] {
+  border: 1px solid #d1d1d1;
+  height: 18px;
+}
+
+input[type="submit"] {
+  border: 1px solid #000;
+  height: 22px;
+  background: black;
+  color: white;
 }

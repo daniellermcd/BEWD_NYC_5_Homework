@@ -1,19 +1,37 @@
 <%= render 'header' %>
 
 <%= form_for @movie do |f| %>
-<table class = "movie_form">
-  <tr>
-    <td><%= f.label 'title' %></td>
-    <td><%= f.text_field 'title' %></td>
-  </tr>
-  <tr>
-    <td><%= f.label 'description' %></td>
-    <td><%= f.text_field 'description' %></td>
-  </tr>
-  <tr>
-    <td><%= f.label 'year_released' %></td>
-    <td><%= f.text_field 'year_released' %></td>
-  </tr>
-</table>
-    <%= f.submit %> <%= link_to "Cancel", "/" %>
+  <% if @movie.errors.any? %>
+    <div id = "error">
+      <h3><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h3>
+
+      <ul>
+      <% @movie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class = "movie_form">
+    <tr>
+      <td><%= f.label 'title', "Title: *" %></td>
+      <td><%= f.text_field 'title' %></td>
+    </tr>
+    <tr>
+      <td><%= f.label 'description', "Description: *" %></td>
+      <td><%= f.text_field 'description' %></td>
+    </tr>
+    <tr>
+      <td><%= f.label 'year_released', "Year Released:" %></td>
+      <td><%= f.text_field 'year_released' %></td>
+    </tr>
+    <tr>
+      <td><%= f.label 'rating', "Rating:" %></td>
+      <td><%= f.text_field 'rating' %></td>
+    </tr>
+  </table>
+
+  <p>* required field</p>
+  <%= f.submit %> <%= link_to "Cancel", "/" %>
 <% end %>
