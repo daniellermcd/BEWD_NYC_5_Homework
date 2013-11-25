@@ -1,0 +1,8 @@
+<%= render 'movies/header' %>
+<table>
+  <tr>
+    <td><h3>Results for "<%= @query %>":</h3></td>
+    <td class = "search"><%= render 'movies/search_form' %></td>
+  </tr>
+</table>
+<%= render 'movies/movies' %>

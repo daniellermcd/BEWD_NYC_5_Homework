@@ -1,0 +1,20 @@
+<table class = "movies">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Year Released</th>
+    <th></th>
+  </tr>
+
+  <%= render('add_new_movie_link') if params[:controller] == 'movies' %>
+  <%= render('back_link') if params[:controller] == 'search' %>
+
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><%= movie.description %></td>
+        <td><%= movie.year_released %></td>
+        <td><%= link_to "Show", movie_path(movie) %></td>
+      </tr>
+    <% end %>
+</table>
