@@ -2,7 +2,7 @@
 
 <%= form_for @movie do |f| %>
   <% if @movie.errors.any? %>
-    <div id = "error">
+    <div id = "error_explanation">
       <h3><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h3>
 
       <ul>

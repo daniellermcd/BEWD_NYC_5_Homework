@@ -64,13 +64,13 @@ table tr th, table tr td {
   display: table;
 }
 
-#error {
+#error_explanation {
   background-color: #ffffcc;
   display: table;
   padding: 0 10px;
 }
 
-#success {
+#successfully_added {
   background-color: #ccffcc;
   display: table;
   padding: 0 10px;
