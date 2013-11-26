@@ -1,5 +1,9 @@
-<ul>
-  <% @stories.each do |story| %>
-    <li><%= link_to story.title, story_path(story) %></li>
-  <% end %>
-</ul>
+<% if @stories.empty? %>
+  <%= "No results found for '#{@query}'" %>
+<% else %>
+  <ul>
+    <% @stories.each do |story| %>
+      <li><%= link_to story.title, story_path(story) %></li>
+    <% end %>
+  </ul>
+<% end %>
