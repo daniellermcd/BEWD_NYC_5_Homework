@@ -81,6 +81,10 @@ input[type="text"] {
   height: 18px;
 }
 
+textarea {
+  border: 1px solid #d1d1d1;
+}
+
 input[type="submit"] {
   border: 1px solid #000;
   height: 22px;

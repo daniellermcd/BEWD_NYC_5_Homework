@@ -1,5 +1,6 @@
 <%= render 'header' %>
 
+<h3>New Movie</h3>
 <%= form_for @movie do |f| %>
   <% if @movie.errors.any? %>
     <div id = "error_explanation">
@@ -20,7 +21,7 @@
     </tr>
     <tr>
       <td><%= f.label 'description', "Description: *" %></td>
-      <td><%= f.text_field 'description' %></td>
+      <td><%= f.text_area 'description' %></td>
     </tr>
     <tr>
       <td><%= f.label 'year_released', "Year Released:" %></td>
