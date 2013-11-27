@@ -1,13 +1,2 @@
-<h1>Welcome to Rewsly</h1>
-
-<%= form_tag 'search', method: :get do %>
-  <%= label_tag 'q', "Search" %>
-  <%= text_field_tag 'q' %>
-  <%= submit_tag "Go" %>
-<% end %>
-
-<p><%= link_to "Add a New Story", new_story_path %></p>
-
-<h3>Below is a list of all the stories:</h3>
-
+<h3>All Stories:</h3>
 <%= render 'stories' %>

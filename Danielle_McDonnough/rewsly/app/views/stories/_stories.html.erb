@@ -1,4 +1,4 @@
-<ul class = "stories">
+<ul>
   <% @stories.each do |story| %>
     <li><%= link_to story.title, story_path(story) %></li>
   <% end %>

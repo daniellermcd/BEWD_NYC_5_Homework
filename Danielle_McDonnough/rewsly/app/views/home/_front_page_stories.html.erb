@@ -1,0 +1,7 @@
+<ul>
+  <% @stories.each do |story| %>
+    <% if story.upvotes != nil && story.upvotes >= 4 && story.created_at.to_date == Date.current %>
+      <li><%= link_to story.title, story_path(story) %></li>
+    <% end %>
+  <% end %>
+</ul>

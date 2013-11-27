@@ -12,7 +12,7 @@ class StoriesController < ApplicationController
   end
 
   def create
-    safe_story = params.require(:story).permit(:title, :category, :link)
+    safe_story = params.require(:story).permit(:title, :category, :link, :upvotes)
     @story = Story.create safe_story
     if @story.save
       redirect_to @story, notice: 'Story successfully saved'

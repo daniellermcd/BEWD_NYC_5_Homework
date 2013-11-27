@@ -1,5 +1,5 @@
 Rewsly::Application.routes.draw do
-  root "stories#index"
-  get "search", to: "search#index"
+  root "home#index"
   resources :stories, only: [:index, :show, :new, :create]
+  get "search", to: "search#index"
 end
