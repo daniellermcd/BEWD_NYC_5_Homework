@@ -6,10 +6,11 @@
   <%= submit_tag "Go" %>
 <% end %>
 
-<p><%= link_to "Add a New Story", new_story_path %></p>
+<p>
+  <%= link_to "Add a New Story", new_story_path %> | 
+  <%= link_to "View All Stories", stories_path %>
+</p>
 
-<h3>Below is a list of all stories added today with 4+ upvotes:</h3>
+<h3>All stories added today with 4+ upvotes:</h3>
 
 <%= render 'front_page_stories' %>
-
-<p><%= link_to "View All Stories", stories_path %></p>
