@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131126164834) do
+ActiveRecord::Schema.define(version: 20131127215332) do
 
   create_table "stories", force: true do |t|
     t.string   "title"
     t.string   "link"
-    t.integer  "upvotes"
+    t.integer  "upvotes",    default: 0
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
