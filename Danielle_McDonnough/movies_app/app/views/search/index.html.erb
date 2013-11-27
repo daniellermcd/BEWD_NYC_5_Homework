@@ -1,7 +1,11 @@
 <%= render 'movies/header' %>
 <table>
   <tr>
-    <td><h3>Results for "<%= @query %>":</h3></td>
+    <% if @movies.empty? %>
+      <td><h3>No results found for "<%= @query %>"</h3></td>
+    <% else %>
+      <td><h3>Results for "<%= @query %>":</h3></td>
+    <% end %>
     <td class = "search"><%= render 'movies/search_form' %></td>
   </tr>
 </table>

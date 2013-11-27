@@ -1,3 +1,5 @@
+puts "Adding seeds"
+
 Movie.create [
   {
     title: "The Shawshank Redemption",
@@ -119,3 +121,5 @@ Movie.create [
     year_released: 2002,
     rating: nil
   }]
+
+puts "Finished adding seeds"
