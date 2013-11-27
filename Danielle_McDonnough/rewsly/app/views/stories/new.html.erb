@@ -1,9 +1,34 @@
+<h3>Add a New Story</h3>
 <%= form_for @story do |f| %>
-  <%= f.label 'title' %>
-  <%= f.text_field 'title' %>
-  <%= f.label 'category' %>
-  <%= f.text_field 'category' %>
-  <%= f.label 'link' %>
-  <%= f.text_field 'link' %>
+  <% if @story.errors.any? %>
+    <div id = "error_explanation">
+      <h2><%= pluralize(@story.errors.count, "error") %> prohibited this story from being saved:</h2>
+   
+      <ul>
+      <% @story.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class = "story_form">
+    <tr>
+      <td><%= f.label 'title' %></td>
+      <td><%= f.text_field 'title' %></td>
+    </tr>
+    <tr>
+      <td><%= f.label 'category' %></td>
+      <td><%= f.text_field 'category' %></td>
+    </tr>
+    <tr>
+      <td><%= f.label 'link' %></td>
+      <td><%= f.text_field 'link' %></td>
+    </tr>
+    <tr>
+      <td><%= f.label 'upvotes' %></td>
+      <td><%= f.text_field 'upvotes' %></td>
+    </tr>
+  </table>
   <%= f.submit %>
 <% end %>

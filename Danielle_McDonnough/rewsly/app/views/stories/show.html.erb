@@ -1,4 +1,10 @@
+<% flash.each do |key, value| %>
+  <div id = "successfully_added">
+    <h3><%= value %></h3>
+  </div>
+<% end %>
+
 <h3><%= @story.title %></h3>
 <p><strong>Upvotes:</strong> <%= @story.upvotes %></p>
 <p><strong>Category:</strong> <%= @story.category %></p>
-<p><%= link_to "Link to full story", @story.link %></p>
+<p><strong>Link to full story:</strong> <%= link_to "#{@story.link}", @story.link %></p>
