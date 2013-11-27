@@ -1,2 +1,6 @@
-<h3>Search results:</h3>
-<%= render 'stories/stories' %>
+<% if @stories.empty? %>
+  <h3><%= "No results found for '#{@query}'" %></h3>
+<% else %>
+  <h3>Search results:</h3>
+  <%= render 'stories/stories' %>
+<% end %>
