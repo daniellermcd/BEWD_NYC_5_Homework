@@ -1,0 +1,17 @@
+<h1><%= @movie.title %> page</h1>
+<table>
+   <thead>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Year Released</th>
+      <th>Rating</th>
+      <th></th>
+   </thead>
+   <tbody>
+      <td><%= @movie.title %></td>
+      <td><%= @movie.description %></td>
+      <td><%= @movie.year_released %></td>
+      <td><%= @movie.rating %></td>
+      <td><%= link_to "Edit", edit_movie_path(@movie) %></td>
+   </tbody>
+</table>
