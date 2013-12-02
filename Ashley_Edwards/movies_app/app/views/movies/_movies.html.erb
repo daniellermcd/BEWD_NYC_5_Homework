@@ -1,0 +1,10 @@
+<h1> You just added a new movie </h1>
+
+<%= @movies.each do |movie| %>
+<p> <%= movie.title %> - <%= movie.description %> - <%= movie.year_released %> </p>
+
+
+
+<%= link_to "Edit", edit_movie_path(@movie)%>
+
+<% end %> 
