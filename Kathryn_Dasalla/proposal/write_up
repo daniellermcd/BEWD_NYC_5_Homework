@@ -1,0 +1,26 @@
+I'm looking at 2 different projects: a) an extension of Shazam, and b) an app similar to foursquare. 
+
+a) For the Shazam project, I want to be add the ability to:
+  1) see if I have tagged a song more than once
+  2) keep track of the number of times I have tagged a song
+  3) be able to filter all songs tagged by: 
+    i) artist
+    ii) album
+    iii) genre (maybe)
+  4) be mobile friendly (maybe)
+
+I found a site called echoprint.me which is supposed to be an open source music identification system.  This brought me to https://github.com/youpy/ruby-echonest/tree/master.  I still have to read through everything.  I'm just worried that since it's not popular, there won't be much documentation to help me get through it all.  
+
+b) For the app similar to foursquare, I want to call it "Find Your Happy Place." The goal is for users to keep track of places that spark happy memories, so that they can go back and/or share with friends.  I want it to be able to: 
+  1) check-in users at a location (current or specified)
+  2) allow users to tag locations by:
+    i) food
+    ii) drink
+    iii) sights
+    iv) etc.
+  3) allow users to add a note (what they saw, what they ate, who they were with)
+  4) count number of tags
+  5) allow a privacy function (maybe)
+  6) be mobile friendly (maybe)
+
+  I haven't used foursquare before.  Is it possible to use a facebook api/gem?  I'm just worried that I might be taking too much on with this project.    
