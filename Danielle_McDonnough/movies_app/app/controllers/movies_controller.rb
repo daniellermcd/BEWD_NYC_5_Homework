@@ -1,6 +1,9 @@
 class MoviesController < ApplicationController
   before_action :find_movie, only: [:show]
 
+  # before running the new action, authenticate that the user is logged in
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
     @movies = Movie.all
   end
