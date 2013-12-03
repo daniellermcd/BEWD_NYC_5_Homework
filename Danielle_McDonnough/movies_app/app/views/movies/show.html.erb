@@ -1,11 +1,5 @@
 <%= render 'header' %>
 
-<% flash.each do |key, value| %>
-  <div id = "successfully_added">
-    <h3><%= value %></h3>
-  </div>
-<% end %>
-
 <p><strong>Title: </strong><%= @movie.title %></p>
 
 <p><strong>Description: </strong><%= @movie.description %></p>
