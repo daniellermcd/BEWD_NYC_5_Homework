@@ -1,0 +1,11 @@
+<h2>See our collection of movies below</h2>
+
+<section class="search-form">
+   <%= form_tag '/search', method: :get do %>
+      <%= label_tag 'q', 'Search' %>
+      <%= text_field_tag 'q' %>
+      <%= submit_tag 'Submit', :class => "btn btn-large btn-link" %>
+   <% end %>
+</section>
+
+<%= render 'movies' %>
