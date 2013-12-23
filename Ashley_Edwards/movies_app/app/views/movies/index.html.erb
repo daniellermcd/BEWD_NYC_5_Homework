@@ -1,0 +1,17 @@
+ <h1> Welcome to RetFlix!</h1> 
+
+
+<%= form_tag '/search', method: :get do %>
+<%= label_tag 'q', "Search for a movie" %>
+<%= text_field_tag 'q' %>
+<%= submit_tag 'submit' %> 
+<% end %>
+
+<%= link_to "Add a Movie", new_movie_path %>
+
+<h1> Here's a list of all the movies </h1>
+
+<%= @movies.each do |movie| %>
+<p> <%= movie.title %> - <%= movie.description %> - <%= movie.year_released %> </p>
+
+<% end %> 
